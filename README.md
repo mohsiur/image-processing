@@ -1,3 +1,5 @@
-# Image Processing Homework 2
+#Image Processing Projects
 
-This is the code base for solving fourier transform and laplacian pyramid on a MxN image
+All projects done during CSE 473 class - Computer Vision and Image processing
+
+[Edge Detection](EdgeDetection/README.md)
