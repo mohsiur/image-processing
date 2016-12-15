@@ -2,6 +2,7 @@
 
 The following results from the code was used to find edge detection by zero-crossing of difference of gaussian and laplace of gaussian methids.
 
+->This is text-align:center<-
 -> ![alt text](UBCampus.jpg) <-
 -> Fig 1. Original color image <-
 
