@@ -42,7 +42,7 @@ Applying a threshold value of 700 gives us a good image of the edges by removing
 Following the same steps as applied to obtain the Difference of Gaussian image, we apply a no threshold zero-crossing to the image, and one with the same threshold value which results in the following images.
 
 ###### Fig 7. No Threshold Value
-![alt text](LoG_No_Threshold.png)
+![alt text](LoG_No_threshold.png)
 
 ###### Fig 8. Threshold value of 700
 ![alt text](LoG_Threshold700.png)
