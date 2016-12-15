@@ -5,7 +5,9 @@
 To run the program and get the following results run the following command in your command line
 
 `git clone https://github.com/mohsiur/image-processing.git`
+
 `cd EdgeDetection`
+
 `python edge_detection.py`
 
 ## Report
