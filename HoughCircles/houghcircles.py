@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
-
+import time
 def plot(data, title):
 	plot.i +=1
 	plt.subplot(2, 2, plot.i) #where to plot the image
@@ -50,16 +50,16 @@ def fill_accumulatorArray(orignalX,originalY,radius, height, width, accumulatorA
 			checkNext += 2 * (y - x) + 1
 
 #Applying canny edge detection to the image to find a threshold value
-def cannyImageSelection():
+def cannyImageSelection(blur_image):
 	for x in range(0, 200, 5):
 		for y in range(0, 200, 10):
 			edge_image = cv2.Canny(blur_image, x, y)
-			matplotlib.image.imsave('cannyedge_image' + str(x) + '_' + str(y) + '.png', edge_image)
+			matplotlib.image.imsave('Threshold_images/cannyedge_image' + str(x) + '_' + str(y) + '.png', edge_image)
 plot.i = 0
 
 def main():
 	#convert the image into an array
-	image = cv2.imread('input.jpg', 1)
+	image = cv2.imread('input2.png', 1)
 	# Make a copy for outputting the final image with detected circles
 	output = image.copy()
 	data = np.array(image)
@@ -74,14 +74,16 @@ def main():
 	plot(data, 'Gaussian Blur Image')
 	matplotlib.image.imsave('blurred_image.png', blur_image)
 
-	#From the images formed above we find that the best suitable threshold is 75, 150
+	#From the images formed above we find that the best suitable threshold is between the range of 75 and 150
+	#cannyImageSelection(blur_image)
 	edge_image = cv2.Canny(blur_image, 75, 150)
 	data = np.array(edge_image)
 	plot(data, 'Canny Edge Image')
+	matplotlib.image.imsave('cannyedge_image.png', edge_image)
 
 	# Get dimensions image and set radius = 100
 	height, width = edge_image.shape
-	radius = 150
+	radius = min(height, width)/2
 	#print(height)
 	#print(width)
 
@@ -92,6 +94,7 @@ def main():
 	
 	# Finding the edges and circles by filling the accumulator array
 	edges = np.where(edge_image==255)
+	start_time = time.time()
 	for i in xrange(0, len(edges[0])):
 		x = edges[0][i]
 		y = edges[1][i]
@@ -117,7 +120,8 @@ def main():
 		
 		j=0
 		i=i+30
-		
+	end_time = time.time()
+	print(str(end_time - start_time) + " seconds")	
 	matplotlib.image.imsave('Output.png', output)
 	plot(output, 'Output Image')
 	plt.show()
