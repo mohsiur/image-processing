@@ -2,6 +2,13 @@
 
 ## Installation
 
+To run the program and get the following results run the following command in your command line
+
+`git clone https://github.com/mohsiur/image-processing.git`
+
+`cd HoughCircles`
+
+`python houghcircles.py`
 
 ## Introduction
 The objective of this project is detect the circles from a given image, in our case the study case image is going to be of coins as shown in Figure 1. By using Hough Transform which is used in detecting shapes, we will be writing our own program to determine circle shapes in the image, and mark them by using some of the techniques we have learnt so far in the course which include, applying gaussian filters to reduce noise, using either canny-edge detector or other forms of edge detector and applying appropriate threshold values to this image. At the end of applying Hough Transform to our images our task is to display the original image with detected circles and analyze the performance of our program and how it can be improved.
@@ -53,6 +60,9 @@ However this algorithm has taught me the ways how we can use a similar approach 
 
 ## References 
 [1] OpenCV Python Tutorials http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html
+
 [2] Numpy https://docs.scipy.org/doc/numpy-dev/user/quickstart.html
+
 [3] Matplotlib http://matplotlib.org/ 
+
 [4] Yuen, H. K., et al. "Comparative study of Hough transform methods for circle finding." Image and vision computing 8.1 (1990): 71-77. https://pdfs.semanticscholar.org/f878/5ba3a56b5ce90fb264e82dacaca1ac641091.pdf 
