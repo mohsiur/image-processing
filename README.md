@@ -1,4 +1,4 @@
-#Image Processing Projects
+# Image Processing Projects
 
 All projects done during CSE 473 class - Computer Vision and Image processing
 
